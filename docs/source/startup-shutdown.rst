@@ -52,6 +52,7 @@ A quick and dirty solution is to add lines below to setDomainEnv.sh
   export CLASSPATH
 
 Then you can add the class to start to Weblogic configuration with the following steps:
+
 - Environment / Startup and Shutdown Classes
 - Click New / select Startup Class
 - Add Startup name to display in WebLogic console and startup class name to boot
