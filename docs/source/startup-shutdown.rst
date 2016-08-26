@@ -59,7 +59,7 @@ Then you can add the class to start to Weblogic configuration with the following
 
 For our example we set the following configuration
 
-.. image:: source/img/StartLogger-configuration.png
+.. image:: img/StartLogger-configuration.png
 
 If startup class failed to load server will shutdown. This is not the default value but can be usefull to know at the begining your application is not able to initialize
 
