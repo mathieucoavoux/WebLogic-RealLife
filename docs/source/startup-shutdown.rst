@@ -65,6 +65,7 @@ If startup class failed to load server will shutdown. This is not the default va
 
 CacheRetriever example
 ``````````````````````
+
 In this example we are showing how startup class can be used.
 We developed a servlet which requires quite lot of informations from database and store it to cache before displaying result to user.
 This servlet will take time at the first run as cache is not initialized.
