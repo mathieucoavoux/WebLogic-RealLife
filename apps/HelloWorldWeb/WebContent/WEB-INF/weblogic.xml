@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wls:weblogic-web-app xmlns:wls="http://xmlns.oracle.com/weblogic/weblogic-web-app" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd http://xmlns.oracle.com/weblogic/weblogic-web-app http://xmlns.oracle.com/weblogic/weblogic-web-app/1.8/weblogic-web-app.xsd">
+    <wls:weblogic-version>12.2.1</wls:weblogic-version>
+    <wls:context-root>HelloWorldWeb</wls:context-root>
+    <wls:logging>
+        <wls:log-filename>/var/log/weblogic/HelloWorldWeb.log</wls:log-filename>
+        <wls:rotation-type>BYTIME</wls:rotation-type>
+        <wls:number-of-files-limited>true</wls:number-of-files-limited>
+        <wls:file-count>30</wls:file-count>
+        <wls:log-file-rotation-dir>/var/log/weblogic/archive</wls:log-file-rotation-dir>
+        <wls:rotation-time>24:01</wls:rotation-time>
+        <wls:file-time-span>24</wls:file-time-span>
+        <wls:date-format-pattern>yyyy-MM-dd</wls:date-format-pattern>
+    </wls:logging>
+    <wls:servlet-descriptor>
+        <wls:servlet-name>TestServlet</wls:servlet-name>
+    </wls:servlet-descriptor>
+</wls:weblogic-web-app>
