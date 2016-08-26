@@ -64,7 +64,7 @@ For our example we set the following configuration
 If startup class failed to load server will shutdown. This is not the default value but can be usefull to know at the begining your application is not able to initialize
 
 CacheRetriever example
-``````````````````````
+```````````````````
 
 In this example we are showing how startup class can be used.
 We developed a servlet which requires quite lot of informations from database and store it to cache before displaying result to user.
