@@ -70,6 +70,7 @@ Source code
 StartLogger class contains a single main method which calls writeStartTime method from DataSourceClient
 
 .. code-block:: java
+
   package fr.comprehensiveit.weblogic;
 
   public class StartLogger {
@@ -84,6 +85,7 @@ StartLogger class contains a single main method which calls writeStartTime metho
 DataSourceClient writes current date and time in t_start2 column. We let WebLogic manages database connection by using testDS datasource.
 
 .. code-block:: java
+
   package fr.comprehensiveit.weblogic;
 
   import java.sql.PreparedStatement;
@@ -134,17 +136,20 @@ DataSourceClient writes current date and time in t_start2 column. We let WebLogi
 Before starting WebLogic we can check that no entry exists into t_start2
 
 .. code-block:: sql
+
   SQL> select * from webusr.t_start2;
   no rows selected
 
 During WebLogic bootup we can notice that WebLogic invoked the main method
 
 .. code-block:: 
+
   ####<27 Aug 2016, 3:43:38,430 PM CEST> <Info> <WebLogicServer> <devhyp001> <Server1-b> <[STANDBY] ExecuteThread: '4' for queue: 'weblogic.kernel.Default (self-tuning)'> <<WLS Kernel>> <> <bb25b59e-d272-454b-8ff8-6adca5db86fb-00000006> <1472305418430> <[severity-value: 64] [rid: 0] [partition-id: 0] [partition-name: DOMAIN] > <BEA-000256> <Invoking fr.comprehensiveit.weblogic.StartLogger.main(null)>
   
 We can also verify if the entry exists
 
 .. code-block:: sql
+
   SQL> select * from webusr.t_start2;
 
           ID D_START
