@@ -4,8 +4,11 @@ Startup WebLogic
 Depending on your configuration, servers can take time to startup. 
 WebLogic deploys its application after two phases.
 
-- Phase 1: The application has the "prepare" status. At this step WebLogic controls package integrity and ensure the application can be deployed. We can meet errors at this step if a package has been corrupted while transferring from the Admin server to managed servers.
-- Phase 2: The application has the "active" status. WebLogic deploys the application in all managed servers of the cluster.
+# Phase 1: The application has the "prepare" status. At this step WebLogic controls package integrity and ensure the application can be deployed. We can meet errors at this step if a package has been corrupted while transferring from the Admin server to managed servers. This phase includes several steps.
+## STATE_NEW : application has never been uploaded before.
+## STATE_PREPARED : application package is available on managed servers.
+## STATE_ADMIN
+# Phase 2: The application has the "active" status. WebLogic deploys the application in all managed servers of the cluster.
 
 Real life:
 On a WebLogic 12c platform we corrupted our WAR application in different ways. You can find below results of theses tests
@@ -20,6 +23,9 @@ On a WebLogic 12c platform we corrupted our WAR application in different ways. Y
 | Delete weblogic.xml               | Active            | Yes                   |
 +-----------------------------------+-------------------+-----------------------+
 | Corrupt war file with dd command  | Active            | No                    |
++-----------------------------------+-------------------+-----------------------+
+| Web application accessing a       | Failed            | No                    |
+| datasource which doesn't exists   |                   |                       |
 +-----------------------------------+-------------------+-----------------------+
 
 Startup and Shutdown Classes
@@ -132,6 +138,9 @@ DataSourceClient writes current date and time in t_start2 column. We let WebLogi
 		return 0;
   	}
   }
+
+Startup
+```````````````````
 
 Before starting WebLogic we can check that no entry exists into t_start2
 
